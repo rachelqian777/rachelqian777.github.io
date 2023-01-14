@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.header{
+	background-color:black;
+	font-family:Gotham;
+	font-size:14px;
+	font-weight: 50;
+	text-align: center;
+	padding-top:24px;
+	padding-bottom: 6px;
+	padding-left:80px;
+	padding-right:80px;
+	color:white;
+}
+
+.topnav {
+	background-color:black;
+	text-align:center;
+}
+
+.navfont{
+	text-align:center;
+	color:white;
+	font-family:Gotham;
+	font-size:12px;
+	text-decoration: none;
+	padding-right:25px;
+}
+
+.footer{
+	background-color:black;
+	padding:12px;
+	padding-right:24px;
+	color:white;
+	font-family:Gotham;
+	font-size:12px;
+	text-align:right;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+.fullcontainer{
+	padding:10px;
+}
+
+
+
+
+.column{
+	float:left;
+	width:50%;
+	overflow: scroll;
+}
+
+.gallerytile{
+	height:200px;
+	width:200px;
+	background-color:#1C2F35;
+	margin:10px;
+}
+
+
+
+hr.solid {
+  border-top: .3px solid white;
+}
+
+
+h1{
+	text-align: center;
+	font-weight:200;
+}
+
+h2{
+	text-align:left;
+	font-size:18px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight:500;
+}
+
+p{
+	font-family:Helvetica Neue;
+	font-size:14px;
+	line-height:1.5;
+	
+	
+}
+
+.button {
+  background-color: #1C2F35; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
