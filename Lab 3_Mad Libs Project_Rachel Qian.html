@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Stylesheet.css">
+	<title>Lab 3: Mad Libs Project</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1 id="heading">Looking for a lost pet?</h1>
+		<p id="description">Fill out the form below and click "Submit" to report a lost pet.</p>
+		<form method="get" id="form">
+			<div class="form-group">
+				<label for="pet person">Pet Name</label>
+				<input type="text" class="form-control" id="pet name" name="Pet Name">
+			</div>
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" class="form-control" id="city" name="City">
+			</div>
+			<div class="form-group">
+				<label for="breed">Breed</label>
+				<input type="text" class="form-control" id="breed" name="breed">
+			</div>
+			<div class="form-group">
+				<label for="gender">Gender</label>
+				<input type="text" class="form-control" id="gender" name="gender">
+			</div>
+			<div class="form-group">
+				<label for="color">Color</label>
+				<input type="text" class="form-control" id="color" name="color">
+			</div>
+			<div class="form-group">
+				<label for="age">Age</label>
+				<input type="number" class="age" id="age" name="age">
+			</div>
+			<div class="form-group">
+				<label for="date lost">Date Lost</label>
+				<input type="date" class="form-control" id="date lost" name="date lost">
+			</div>
+			<div class="form-group">
+				<label for="phone number">Phone Number</label>
+				<input type="text" class="form-control" id="phone number" name="phone number">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="chip">Is your pet chipped?</label>
+				<input type="radio" class="form-control" id="chip" name="chip">
+			</div>
+			<button id="submit" type="submit" class="button-primary">Submit</button>
+		</form>
+		<div id="story"></div>
+	</div>
+</body>
+	
+	
+<script>
+	document.getElementById('submit').addEventListener('click', function(event){
+		event.preventDefault();
+		console.log(document.getElementById('pet name').value);
+		console.log(document.getElementById('city').value);
+		console.log(document.getElementById('breed').value);
+		console.log(document.getElementById('color').value);
+		console.log(document.getElementById('gender').value);
+		console.log(document.getElementById('age').value);
+		console.log(document.getElementById('date lost').value);
+		console.log(document.getElementById('phone number').value);
+		console.log(document.getElementById('email').value);
+		console.log(document.getElementById('chip').value);
+
+	
+		//Hide the form when submitted
+		document.getElementById('form').style.display = "none";
+		document.getElementById('heading').style.display = "none";
+		document.getElementById('description').style.display = "none";
+
+		//Put the input into a sentence. "Thanks for submitting the infromation. We will help you look for "pet name" in "city".
+		document.getElementById('story').innerHTML = 'Thanks for submitting the information. We will help look for ' + document.getElementById('pet name').value + ' in ' + document.getElementById('city').value + '. ' + 'We will contact you at ' + document.getElementById('phone number').value + ' once we have any information about ' + document.getElementById('pet name').value;
+	
+
+
+	
+	})
+
+	
+
+</script>
+</html>
