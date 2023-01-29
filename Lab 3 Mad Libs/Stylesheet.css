@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:36px;
+	font-weight: 50;
+	text-align: center;
+	padding: 24px;
+	color: #EA4C89;
+}
+
+#description{
+	text-align: center;
+}
+
+.button-primary{
+	padding: 8px 16px;
+	background-color: #EA4C89;
+	color: #ffffff;
+	font-size: 14px;
+	border-radius: 8px;
+	border-color: none;
+}
+
+
+.form-group{
+	padding: 8px 0px;
+}
+
+#stoty{
+	background-color: #EA4C89;
+	color: white;
+	
+}
