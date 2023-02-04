@@ -69,7 +69,9 @@
 		row += '<td>' + data['dob.age'] + '</td>'; //age
 		row += '<td>' + data['dob.date'] + '</td>'; //DOB
 		row += '<td>' + data.nat + '</td>'; //Nationality
-		row += '<td>' + data['registerd.age'] + '</td>'; //Tenure
+		row += '<td>' + data['registered.age'] + '</td>'; //Tenure
+		row += '<td>' + data['login.username'] + '</td>'; //username
+		row += '<td>' + data['login.password'] + '</td>'; //password
 		row += '</tr>'; 
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
