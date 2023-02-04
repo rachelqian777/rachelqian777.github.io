@@ -61,8 +61,8 @@
 		//append csv data to the table
 		let row = '<tr>';
 		row += '<td><img src="' + data['picture.large'] + '"></td>' ;
-		row += '<td>' + data[name.title] + data[name.first] + data[name.last] + '</td>'
-		row += '<td>' + data[location.street.number] + data[location.street.name] +'<br>' + data[location.city] + data[location.state] +date[location.postcode] + '<br>' + data[location.country] + '</td>'
+		row += '<td>' + data['name.title'] + data['name.first'] + data['name.last'] + '</td>'
+		row += '<td>' + data['location.street.number'] + data['location.street.name'] +'<br>' + data['location.city'] + data['location.state'] + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'
 		row += '</tr>';
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
