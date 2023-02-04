@@ -27,7 +27,7 @@
 						<th>Name</th>
 						<th>Address</th>
 						<th>Time zone</th>
-						<th>Email Address</th>
+						<th style="width:80px">Email Address</th>
 						<th>Phone Number</th>
 						<th>Age</th>
 						<th>DOB</th>
@@ -42,7 +42,7 @@
 						<td><img src="http://placekitten.com/128/128"></td>
 						<td>Mr John Smith</td>
 						<td>729 29th St.<br>Manhattan Beach California 90266<br>United States</td>
-						<td>-7 Pacific Standard Time</td>
+						<td>-7<br>Pacific Standard Time</td>
 						<td>
 							<a class="button" href="mailto: notanemail@gmail.com">Email Me</a>
 						</td>
@@ -71,7 +71,7 @@
 		row += '<td><img src="' + data['picture.large'] + '"></td>' ;
 		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>';
 		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'; // address
-		row += '<td>' + data['location.timezone.offset'] + ' ' + data['location.timezone.description'] + '</td>'; //timezone
+		row += '<td>' + data['location.timezone.offset'] + '<br>' + data['location.timezone.description'] + '</td>'; //timezone
 		row += '<td><a class="button" href="mailto: ' + data.email + '">' + 'Email Me' + '</a></td>'; //email address
 		row += '<td><a href= "tel:' + data.phone + '">' + data.phone + '</a></td>'; //phone number
 		row += '<td>' + data['dob.age'] + '</td>'; //age
