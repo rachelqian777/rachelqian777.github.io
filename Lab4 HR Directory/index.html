@@ -66,6 +66,10 @@
 		row += '<td>' + data['location.timezone.offset'] + ' ' + data['location.timezone.description'] + '</td>'; //timezone
 		row += '<td><a href="mailto: ' + data.email + '">' + data.email + '</a></td>'; //email address
 		row += '<td><a href= "tel:' + data.phone + '">' + data.phone + '</a></td>'; //phone number
+		row += '<td>' + data['dob.age'] + '</td>'; //age
+		row += '<td>' + data['dob.date'] + '</td>'; //DOB
+		row += '<td>' + data.nat + '</td>'; //Nationality
+		row += '<td>' + data['registerd.age'] + '</td>'; //Tenure
 		row += '</tr>'; 
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
