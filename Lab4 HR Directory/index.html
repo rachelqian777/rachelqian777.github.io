@@ -86,7 +86,7 @@
 		row += '<td>' + data['login.username'] + '</td>'; //username
 		row += '<td>' + data['login.password'] + '</td>'; //password
 		row += '<td>' + data.gender + '</td>'
-		row += '<td>' + data[id.name] + ' ' + data[id.value] + '</td>'
+		row += '<td>' + data['id.name'] + ' ' + data['id.value'] + '</td>'
 		row += '</tr>'; 
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
