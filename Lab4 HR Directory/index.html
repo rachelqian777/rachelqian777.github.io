@@ -5,6 +5,14 @@
 <title>HR Directory</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://d3js.org/d3.v6.min.js"></script>
+<style>
+	.button{
+		padding: 4px;
+		background: #2927D8;
+		color: white;
+		border-radius: 4px;
+	}
+</style>
 </head>
 
 <body>
@@ -31,7 +39,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><img src="http://placekitten.com/120/120"></td>
+						<td><img src="http://placekitten.com/125/125"></td>
 						<td>Mr John Smith</td>
 						<td>729 29th St.<br>Manhattan Beach California 90266<br>United States</td>
 						<td>-7 Pacific Standard Time</td>
@@ -64,7 +72,7 @@
 		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>';
 		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'; // address
 		row += '<td>' + data['location.timezone.offset'] + ' ' + data['location.timezone.description'] + '</td>'; //timezone
-		row += '<td><a href="mailto: ' + data.email + '">' + data.email + '</a></td>'; //email address
+		row += '<td><a class="button" href="mailto: ' + data.email + '">' + data.email + '</a></td>'; //email address
 		row += '<td><a href= "tel:' + data.phone + '">' + data.phone + '</a></td>'; //phone number
 		row += '<td>' + data['dob.age'] + '</td>'; //age
 		row += '<td>' + data['dob.date'] + '</td>'; //DOB
