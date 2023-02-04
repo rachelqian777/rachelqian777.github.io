@@ -10,7 +10,7 @@
 		padding-top: 12px;
  		padding-bottom: 12px;
   		text-align: left;
- 		background-color: #04AA6D;
+ 		background-color:#2562DF;
  		color: white;
 	}
 </style>
@@ -85,8 +85,8 @@
 		row += '<td>' + data['registered.age'] + '</td>'; //Tenure
 		row += '<td>' + data['login.username'] + '</td>'; //username
 		row += '<td>' + data['login.password'] + '</td>'; //password
-		row += '<td>' + data.gender + '</td>'
-		row += '<td>' + data['id.name'] + ' ' + data['id.value'] + '</td>'
+		row += '<td>' + data.gender + '</td>'; //gender
+		row += '<td>' + data['id.name'] + ' ' + data['id.value'] + '</td>'; //ID
 		row += '</tr>'; 
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
