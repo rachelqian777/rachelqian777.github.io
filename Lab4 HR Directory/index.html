@@ -39,12 +39,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><img src="http://placekitten.com/125/125"></td>
+						<td><img src="http://placekitten.com/128/128"></td>
 						<td>Mr John Smith</td>
 						<td>729 29th St.<br>Manhattan Beach California 90266<br>United States</td>
 						<td>-7 Pacific Standard Time</td>
 						<td>
-							<a href="mailto: notanemail@gmail.com">notanemail@gmail.com</a>
+							<a class="button" href="mailto: notanemail@gmail.com">Email Me</a>
 						</td>
 						<td>
 							<a href="tel:000-000-0000">000-000-0000</a>
@@ -72,7 +72,7 @@
 		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>';
 		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'; // address
 		row += '<td>' + data['location.timezone.offset'] + ' ' + data['location.timezone.description'] + '</td>'; //timezone
-		row += '<td><a class="button" href="mailto: ' + data.email + '">' + data.email + '</a></td>'; //email address
+		row += '<td><a class="button" href="mailto: ' + data.email + '">' + 'Email Me' + '</a></td>'; //email address
 		row += '<td><a href= "tel:' + data.phone + '">' + data.phone + '</a></td>'; //phone number
 		row += '<td>' + data['dob.age'] + '</td>'; //age
 		row += '<td>' + data['dob.date'] + '</td>'; //DOB
