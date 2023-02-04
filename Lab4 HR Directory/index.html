@@ -33,7 +33,7 @@
 					<tr>
 						<td><img src="http://placekitten.com/120/120"></td>
 						<td>Mr John Smith</td>
-						<td>729 29th St.<br>ManhattanBeach California 90266<br>United States</td>
+						<td>729 29th St.<br>Manhattan Beach California 90266<br>United States</td>
 						<td>-7 Pacific Standard Time</td>
 						<td>
 							<a href="mailto: notanemail@gmail.com">notanemail@gmail.com</a>
@@ -61,8 +61,8 @@
 		//append csv data to the table
 		let row = '<tr>';
 		row += '<td><img src="' + data['picture.large'] + '"></td>' ;
-		row += '<td>' + data['name.title'] + data['name.first'] + data['name.last'] + '</td>'
-		row += '<td>' + data['location.street.number'] + data['location.street.name'] +'<br>' + data['location.city'] + data['location.state'] + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'
+		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>'
+		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'
 		row += '</tr>';
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
