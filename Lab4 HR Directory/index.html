@@ -61,9 +61,11 @@
 		//append csv data to the table
 		let row = '<tr>';
 		row += '<td><img src="' + data['picture.large'] + '"></td>' ;
-		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>'
-		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'
-		row += '</tr>';
+		row += '<td>' + data['name.title'] + ' ' + data['name.first'] + ' ' + data['name.last'] + '</td>';
+		row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] +'<br>' + data['location.city'] + ' ' + data['location.state'] + ' ' + data['location.postcode'] + '<br>' + data['location.country'] + '</td>'; // address
+		row += '<td>' + date['location.timezone.offset'] + ' ' + date['location.timezone.description'] + '</td>'; //timezone
+		row += '<td><a href="mailto: ' + data.email + '">' + data.email + '</a></td>';
+		row += '</tr>'; 
 	
 		d3.select('#directoryTable tbody').append('tr').html(row);
 	});
