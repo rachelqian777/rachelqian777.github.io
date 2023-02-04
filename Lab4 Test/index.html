@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HR Directory</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>HR Directory</h1>
+		
+		<div id="directory">
+			<table class="table" id="directoryTable">
+				<thead>
+					<tr>
+						<th>City</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Los Angeles</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+	
+<script>
+	d3.csv("hr-directory.csv", function (data){
+		console.log(data);
+	
+		//append csv data to the table
+		let row = '<tr>';
+		row += '<td>' + data['location.city'] + '</td>' ;
+		row += '</tr>';
+	
+		d3.select('#directoryTable tbody').append('tr').html(row);
+	});
+</script>
+</html>
