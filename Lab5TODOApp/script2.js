@@ -1,8 +1,6 @@
 //Initial References
-//Initial References
-//Initial References
-const newTaskInput = document.querySelector("#new-task input");
-const tasksDiv = document.querySelector("#tasks");
+const newTaskInput = document.querySelector("#new-task input"); //Get what's in the input field
+const tasksDiv = document.querySelector("#tasks"); //the list of tasks
 let deleteTasks, editTasks, tasks;
 let updateNote = "";
 let count;
@@ -17,7 +15,7 @@ window.onload = () => {
 //Function to Display The Tasks
 const displayTasks = () => {
 	if (Object.keys(localStorage).length > 0) {
-    	tasksDiv.style.display = "inline-block";
+    	tasksDiv.style.display = "inline-block"; //Check if there's input
   	} else {
 		tasksDiv.style.display = "none";
 	}
@@ -27,7 +25,7 @@ tasksDiv.innerHTML = "";
 
 //Fetch All The Keys in local storage
 let tasks = Object.keys(localStorage);
-tasks = tasks.sort();
+tasks = tasks.sort(); //???
 
 for (let key of tasks) {
 	let classValue = "";
@@ -35,48 +33,48 @@ for (let key of tasks) {
 	//Get all values
     let value = localStorage.getItem(key);
     let taskInnerDiv = document.createElement("div");
-    taskInnerDiv.classList.add("task");
+    taskInnerDiv.classList.add("task"); //add a class
     taskInnerDiv.setAttribute("id", key);
-    taskInnerDiv.innerHTML = `<span id="taskname">${key.split("_")[1]}</span>`;
+    taskInnerDiv.innerHTML = `<span id="taskname">${key.split("_")[1]}</span>`; //Give the inner HTML a value
     //localstorage would store boolean as string so we parse it to boolean back
     let editButton = document.createElement("button");
-    editButton.classList.add("edit");
-    editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
-    if (!JSON.parse(value)) {
+    editButton.classList.add("edit"); //add a class
+    editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`; //add the edit icon
+    if (!JSON.parse(value)) { //???
       editButton.style.visibility = "visible";
     } else {
       editButton.style.visibility = "hidden";
       taskInnerDiv.classList.add("completed");
     }
-    taskInnerDiv.appendChild(editButton);
-    taskInnerDiv.innerHTML += `<button class="delete"><i class="fa-solid fa-trash"></i></button>`;
+    taskInnerDiv.appendChild(editButton); //append
+    taskInnerDiv.innerHTML += `<button class="delete"><i class="fa-solid fa-trash"></i></button>`; //add the delete button
     tasksDiv.appendChild(taskInnerDiv);
 }
 
   //tasks completed
-  tasks = document.querySelectorAll(".task");
+  tasks = document.querySelectorAll(".task"); //get all elements with the class tasks
   tasks.forEach((element, index) => {
-	  element.onclick = () => {
+	  element.onclick = () => { //when clicked
       //local storage update
 		  if (element.classList.contains("completed")) {
     		updateStorage(element.id.split("_")[0], element.innerText, false);
 		  } else {
-			  updateStorage(element.id.split("_")[0], element.innerText, true);
+			updateStorage(element.id.split("_")[0], element.innerText, true);
 		  }
 	  };
   });
 
 //Edit Tasks
 editTasks = document.getElementsByClassName("edit");
-Array.from(editTasks).forEach((element, index) => {
-	element.addEventListener("click", (e) => {
-    //Stop propogation to outer elements 
+Array.from(editTasks).forEach((element, index) => { //iterate through editTasks
+	element.addEventListener("click", (e) => { //add an eventLister click //What's the e?
+    	//Stop propogation to outer elements 
 		e.stopPropagation();
 		//disable other edit buttons when one task is being edited
 		disableButtons(true);
 		//update input value and remove div
 		let parent = element.parentElement;
-		newTaskInput.value = parent.querySelector("#taskname").innerText;
+		newTaskInput.value = parent.querySelector("#taskname").innerText; //update the text
 		//set updateNote to the task that is being edited
 		updateNote = parent.id;
 		//remove task
@@ -119,11 +117,11 @@ const updateStorage = (index, taskValue, completed) => {
 };
 
 //Function To Add New Task
-document.querySelector("#push").addEventListener("click", () => {
+document.querySelector("#push").addEventListener("click", () => { //#push is the "add" button we have in the HTML file
 	//Enable the edit button
 	disableButtons(false);
 	if (newTaskInput.value.length == 0) {
-    	alert("Please Enter A Task");
+    	alert("Please Enter A Task"); //if the input is empty, display a warning
     } else {
         //Store locally and display from local storage
     	if (updateNote == "") {
