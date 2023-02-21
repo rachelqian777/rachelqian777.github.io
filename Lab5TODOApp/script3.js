@@ -1,3 +1,5 @@
+//Converted some arrow functions back to traditional fucntions after getting the feedback during office hour. There are some more complicated ones that I was not able to tackle.
+
 //Initial References
 const newTaskInput = document.querySelector("#new-task input"); //Get what's in the input field
 const tasksDiv = document.querySelector("#tasks"); //the list of tasks
@@ -12,13 +14,27 @@ window.onload = () => {
 	displayTasks();
 };
 
+//This one was not successful
+//window.onload = funtion(){
+//	updateNote = "";
+//	count = Object.keys(localStorage).length;
+//	displayTasks();
+//}
+
 //Function to Display The Tasks
-const displayTasks = () => {
+//const displayTasks = () => {
+//	if (Object.keys(localStorage).length > 0) {
+//    	tasksDiv.style.display = "inline-block"; //Check if there's input
+//  	} else {
+//		tasksDiv.style.display = "none";
+//	}
+	
+const displayTasks = function () {
 	if (Object.keys(localStorage).length > 0) {
-    	tasksDiv.style.display = "inline-block"; //Check if there's input
+    	tasksDiv.style.display = "inline-block";
   	} else {
 		tasksDiv.style.display = "none";
-	}
+}
 
 //Clear the tasks in the input field
 tasksDiv.innerHTML = "";
@@ -105,16 +121,26 @@ const disableButtons = (bool) => {
 };
 
 //Remove Task from local storage
-const removeTask = (taskValue) => {
+//const removeTask = (taskValue) => {
+//	localStorage.removeItem(taskValue);
+//	displayTasks();
+//};
+
+const removeTask = function(taskValue) {
 	localStorage.removeItem(taskValue);
 	displayTasks();
-};
+}
 
 //Add tasks to local storage
-const updateStorage = (index, taskValue, completed) => {
+//const updateStorage = (index, taskValue, completed) => {
+//	localStorage.setItem(`${index}_${taskValue}`, completed);
+//	displayTasks();
+//};
+
+const updateStorage = function(index, taskValue, completed){
 	localStorage.setItem(`${index}_${taskValue}`, completed);
 	displayTasks();
-};
+}
 
 //Function To Add New Task
 document.querySelector("#push").addEventListener("click", () => { //#push is the "add" button we have in the HTML file
