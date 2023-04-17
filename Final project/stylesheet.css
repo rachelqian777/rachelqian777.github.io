@@ -163,3 +163,15 @@ h3{
     border-color: #676F9D;
     margin: 2em 2em;
   }
+
+  #random-btn {
+    height: 50px;
+  }
+
+  #search-btn{
+    height:50px;
+  }
+
+  .myrecipe-container {
+     margin: 2em;
+  }

@@ -20,6 +20,7 @@ searchBtn.addEventListener("click", () => {
         console.log(myMeal.strMeal);
         console.log(myMeal.strInstructions);
 
+
         let count = 1;
         let ingredients = [];
         for(let i in myMeal) {
@@ -33,20 +34,6 @@ searchBtn.addEventListener("click", () => {
             }
         }
         console.log(ingredients);
-
-        // result.innerHTML = `
-        // <div class="name">
-        //     <h2>${myMeal.strMeal}</h2>
-        //  </div>
-        // <img src=${myMeal.strMealThumb}>
-        // <div class="ingredient-con>
-        //     <h3>Ingredients</h3>
-        // </div>
-        // <div id="recipe">
-        //     <pre id="instructions">${myMeal.strInstructions}</pre>
-        // </div>
-        // `;
-
 
         result.innerHTML = `
         <div class="parent">
