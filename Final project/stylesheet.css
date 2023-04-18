@@ -87,6 +87,10 @@ h2 {
     font-size: 28px;
 }
 
+a {
+    color: white;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -116,6 +120,26 @@ h3{
     border: solid;
     border-color: #E39353;
     color: #E39353;
+    font-weight: 400;
+    border-radius: 2em;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    font-size: 1em;
+    background-color: #E39353;
+    border: solid;
+    color: white;
+    font-weight: 400;
+    border-radius: 2em;
+    padding: 10px 20px;
+}
+
+.btn-secondary:active {
+    font-size: 1em;
+    background-color: #676F9D;
+    border: solid;
+    color: white;
     font-weight: 400;
     border-radius: 2em;
     padding: 10px 20px;
@@ -175,3 +199,42 @@ h3{
   .myrecipe-container {
      margin: 2em;
   }
+
+  .card {
+    display: inline-block;
+    width: 22%;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h5 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#fav-meals-con {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+
+
+  

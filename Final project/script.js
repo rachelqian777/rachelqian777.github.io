@@ -5,6 +5,9 @@ let searchBtn = document.getElementById("search-btn");
 let url="https://www.themealdb.com/api/json/v1/1/search.php?s=";
 let  userInp= document.getElementById("user-inp").value;
 
+
+
+
 searchBtn.addEventListener("click", () => {
     let userInp = document.getElementById("user-inp").value;
     if(userInp.length == 0){
@@ -50,7 +53,7 @@ searchBtn.addEventListener("click", () => {
                 <div id="recipe">
                     <pre id="instructions">${myMeal.strInstructions}</pre>
                 </div>
-                <button class="btn-secondary">Add to Favorite</button>
+                <button id="add-to-fav" class="btn-secondary">Add to Favorite</button>
             </div>
 
         </div>
@@ -66,7 +69,56 @@ searchBtn.addEventListener("click", () => {
             parent2.appendChild(child);
             ingredientCon.appendChild(parent2);
         })
+
+
+        document.getElementById("add-to-fav").addEventListener("click", function() {
+            let userInp = document.getElementById("user-inp").value;
+            let meal = JSON.stringify({
+                "idMeal": myMeal.idMeal,
+                "strMeal": myMeal.strMeal,
+                "strMealThumb": myMeal.strMealThumb,
+                "strInstructions": myMeal.strInstructions,
+                "strIngredient": ingredients
+            });
+            localStorage.setItem(userInp, meal);
+
+            let savedMeals = JSON.parse(localStorage.getItem("savedMeals")) || [];
+            savedMeals.push(myMeal);
+            localStorage.setItem("savedMeals", JSON.stringify(savedMeals));
+
+            // Create popup window
+            let popupWindow = window.open("", "popupWindow", "width=400,height=200");
+
+            // Create dismiss button
+            let dismissButton = document.createElement("button");
+            dismissButton.innerText = "Dismiss";
+            dismissButton.addEventListener("click", function() {
+                popupWindow.close();
+            });
+
+            // Create message
+            let message = document.createElement("div");
+            message.innerText = "Added to Favorite!";
+            message.style.fontSize = "18px";
+            message.style.textAlign = "Left";
+
+            // Add message and dismiss button to popup window
+            popupWindow.document.body.appendChild(message);
+            popupWindow.document.body.appendChild(dismissButton);
+
+            // Open popup window
+            popupWindow.focus();    
+
+
+
+        });
+        
+
+
     });
     }
 });
+
+
+
 

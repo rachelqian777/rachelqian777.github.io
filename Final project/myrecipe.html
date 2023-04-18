@@ -12,7 +12,7 @@
     <div class="header">
         <p class="web-title">What To Eat Tonight?</p>
         <div class="header-right">
-            <a href="index2.html">Recipe Search</a>
+            <a href="index.html">Recipe Search</a>
             <a href="randomizer.html">Randomize</a>
             <a class="active" href="#">My Recipes</a>
     
@@ -22,9 +22,49 @@
     <hr class="solid">
 
     <div class="myrecipe-container">
-        <h3>My recipe</h3>
-        <p style="color: white">Available soon, stay tuned!</p>
+        <h3>My Favorite Recipes</h3>
+        <div id="fav-meals-con"></div>
     </div>
     
+
+    
+      
+    
+    <script>
+        let savedMeals = JSON.parse(localStorage.getItem("savedMeals"));
+
+        if(savedMeals !== null) {   
+            let parent = document.getElementById("fav-meals-con");
+
+            for(let i = 0; i < savedMeals.length; i++) {
+                let meal = savedMeals[i];
+
+
+                let card = document.createElement("div");
+                card.classList.add("card");
+
+                let cardImg = document.createElement("img");
+                cardImg.classList.add("card-img-top");
+                cardImg.src = meal.strMealThumb;
+                cardImg.alt = meal.strMeal;
+                card.appendChild(cardImg);
+
+                let cardBody = document.createElement("div");
+                cardBody.classList.add("card-body");
+                card.appendChild(cardBody);
+
+                let cardTitle = document.createElement("h5");
+                cardTitle.classList.add("card-title");
+                cardTitle.textContent = meal.strMeal;
+                cardBody.appendChild(cardTitle);
+
+                parent.appendChild(card);
+            }
+        }
+
+    </script>
+    
+
+
 </body>
 </html>
